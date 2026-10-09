@@ -2,7 +2,7 @@
 
 **Carry the light home.** An atmospheric puzzle voyage created by **Shivam Gupta**.
 
-[Play TIDELUME](https://tidelume.web.app)
+[Play TIDELUME](https://tidelume.web.app) | [Watch the narrated gameplay demo](https://youtu.be/WGfP8QVITXw)
 
 Twelve authored islands, a six-step field guide, an optional three-island demo,
 local keeper profiles, undo, state-aware hints, original sound effects and a
@@ -38,6 +38,7 @@ cloud synchronization.
 ## Downloads and credits
 
 [Download version 1.1.0](https://github.com/shi1720/tidelume-play/releases/tag/v1.1.0).
+The release also includes the narrated gameplay video, subtitle file and thumbnail.
 The macOS application is unsigned and not notarized. The web version is the
 recommended option for immediate play.
 
