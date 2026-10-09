@@ -138,6 +138,7 @@ document.getElementById('fs').addEventListener('click',async()=>{try{if(document
 		setStatusMode('progress');
 		engine.startGame({
 			'onProgress': function (current, total) {
+                if (!initializing) return;
 				if (current > 0 && total > 0) {
 					statusProgress.value = current;
 					statusProgress.max = total;
