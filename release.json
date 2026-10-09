@@ -1,0 +1,10 @@
+{
+  "version": "1.1.0",
+  "source_revision": "90b9e905407bd0481e524f20672d1a8b164db097",
+  "files": {
+    "index.html": "0855c2c7b9b51b3a69535153b081241cbec603ebea6c58ac38d1867e2bdb6a93",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+    "index.pck": "29e38dac7aed9c9249679b1947790c4e95ccb813eb8f5ff642cff945dfdc7ce8"
+  }
+}

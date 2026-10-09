@@ -2,12 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>TIDELUME</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+		<title>TIDELUME | Carry the light home</title>
 		<style>
 html,body{margin:0;padding:0;border:0;background:#071820;color:#e7eee8;height:100%;overflow:hidden;font-family:system-ui,sans-serif;touch-action:none}
 #canvas{display:block;margin:0;padding:0;border:0;outline:none}
-#status{position:fixed;inset:0;z-index:10;background:linear-gradient(90deg,rgba(7,24,32,.94),rgba(7,24,32,.45)),url('coast.svg') center/cover;display:flex;flex-direction:column;align-items:center;justify-content:center;visibility:visible;text-align:center;padding:24px}
+#status{position:fixed;inset:0;z-index:10;background:linear-gradient(90deg,rgba(7,24,32,.94),rgba(7,24,32,.45)),url('coast-painted.png') center/cover;display:flex;flex-direction:column;align-items:center;justify-content:center;visibility:visible;text-align:center;padding:24px}
 #status-splash{width:84px;height:84px;object-fit:contain;margin-bottom:22px}
 .wordmark{font-size:clamp(28px,5vw,52px);font-weight:400;letter-spacing:.26em;margin:0 0 14px .26em}
 .tagline{color:#95afb2;font-size:17px;line-height:1.8;margin:0 0 30px}
@@ -16,16 +16,17 @@ html,body{margin:0;padding:0;border:0;background:#071820;color:#e7eee8;height:10
 #load-copy{font-size:13px;color:#95afb2;letter-spacing:.04em;margin-top:18px}
 #status-notice{display:none;max-width:640px;border:1px solid #8f724b;padding:20px;line-height:1.6;background:#102b35;border-radius:12px}
 #fs{position:fixed;right:10px;bottom:8px;z-index:5;background:#102b35;color:#95afb2;border:1px solid #385860;border-radius:6px;font-size:11px;padding:7px 10px;cursor:pointer;opacity:.65}
+@media(max-width:640px){#fs{display:none}}
+#retry{display:none;background:#f7c878;color:#102b35;border:0;border-radius:10px;padding:14px 24px;margin-top:20px;font:inherit;cursor:pointer}
 #fs:hover,#fs:focus-visible{opacity:1;color:#e7eee8;outline:2px solid #f7c878}
-#portrait{display:none;position:fixed;inset:0;background:rgba(7,24,32,.97);z-index:20;align-items:center;justify-content:center;text-align:center;padding:28px;line-height:1.8}
-#portrait button{background:#f7c878;border:0;border-radius:10px;padding:14px 22px;font:inherit;margin-top:24px;cursor:pointer}
-@media (orientation:portrait) and (max-width:640px){#portrait{display:flex}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 <meta name="description" content="TIDELUME: Carry the light home. Twelve atmospheric light puzzles by Shivam Gupta.">
-	</head>
+	<meta name="description" content="Carry a beam across twelve sleeping islands. A complete atmospheric puzzle game by Shivam Gupta. Play free in your browser.">
+<meta name="theme-color" content="#071820">
+</head>
 	<body>
 		<canvas id="canvas" tabindex="0" aria-label="Tidelume puzzle game. Use Tab to navigate controls. Arrow keys select mirrors, Enter rotates, T switches tide, Z undoes, Escape pauses.">
 			Your browser does not support the canvas tag.
@@ -35,21 +36,20 @@ html,body{margin:0;padding:0;border:0;background:#071820;color:#e7eee8;height:10
 			Your browser does not support JavaScript.
 		</noscript>
 
-		<div id="portrait"><div><img src="lighthouse.svg" width="72" height="72" alt=""><h2>A wider view of the coast</h2><p>Turn your device sideways for a more comfortable voyage.<br>기기를 가로로 돌리면 더 편하게 즐길 수 있어요.</p><button id="portrait-dismiss">Continue anyway / 계속하기</button></div></div>
-<button id="fs" type="button" aria-label="Toggle full screen">⛶ Full screen / 전체 화면</button>
+		<button id="fs" type="button" aria-label="Toggle full screen">Full screen</button>
 <div id="status" role="status" aria-live="polite">
 			<img id="status-splash" src="lighthouse.svg" alt="">
-<h1 class="wordmark">TIDELUME</h1><p class="tagline">Carry the light home.<br>빛을 집으로.</p>
-			<progress id="status-progress" aria-label="Loading game"></progress><p id="load-copy">Preparing the coast · 해안을 준비하는 중</p>
-			<div id="status-notice"></div>
+<h1 class="wordmark">TIDELUME</h1><p class="tagline">Carry the light home.</p>
+			<progress id="status-progress" aria-label="Loading game"></progress><p id="load-copy">Preparing the coast</p>
+			<div id="status-notice"></div><button id="retry" type="button">Try again</button>
 		</div>
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":8228400,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":3617148,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
-document.getElementById('portrait-dismiss').addEventListener('click',()=>document.getElementById('portrait').remove());
+document.getElementById('retry').addEventListener('click',()=>location.reload());
 document.getElementById('fs').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(e){document.getElementById('fs').textContent='Full screen unavailable';}});
 
 (function () {
@@ -72,6 +72,7 @@ document.getElementById('fs').addEventListener('click',async()=>{try{if(document
 		statusOverlay.style.visibility = 'visible';
 		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
 		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
+        document.getElementById('retry').style.display = mode === 'notice' ? 'block' : 'none';
 		statusMode = mode;
 	}
 
@@ -89,7 +90,7 @@ document.getElementById('fs').addEventListener('click',async()=>{try{if(document
 	function displayFailureNotice(err) {
 		console.error(err);
 		if (err instanceof Error) {
-			setStatusNotice(err.message);
+			setStatusNotice('The coast could not load. Check your connection, then try again.\n\n' + err.message);
 		} else if (typeof err === 'string') {
 			setStatusNotice(err);
 		} else {

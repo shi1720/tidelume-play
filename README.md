@@ -1,34 +1,48 @@
-# TIDELUME · 타이드룸
+# TIDELUME
 
-**Carry the light home.** A complete short Godot puzzle voyage created by **Shivam Gupta** with AI-assisted development.
+**Carry the light home.** An atmospheric puzzle voyage created by **Shivam Gupta**.
 
-[Play now](https://shi1720.github.io/tidelume-play/)
+[Play TIDELUME](https://tidelume.web.app)
 
-Twelve authored levels, English/Korean, a six-step guide, three-level demo,
-local profiles, undo, state-aware hints, and a narrative ending. In the final
-chapter, memories stay lit as you explore both tides.
+Twelve authored islands, a six-step field guide, an optional three-island demo,
+local keeper profiles, undo, state-aware hints, original sound effects and a
+complete story ending. In the final chapter, memories stay lit as you explore
+both tides. The English interface adapts to desktop and portrait screens.
+Small portrait screens scroll to keep the board and controls readable.
 
-This repository contains the playable Web release and its licenses.
-The source project is maintained in the creator's separate `tidelume` repository.
+## Play locally
 
-## Local play
+Serve this folder over HTTP:
 
 ```sh
 python3 -m http.server 8765
 ```
 
-Open http://localhost:8765. Serve over HTTP; do not open index.html as a file.
-Single-threaded Godot Web export, Compatibility renderer. No gameplay server,
-account, tracking, ads, or API keys. Profiles are local names, not online auth.
-Clearing browser storage removes local progress. Export a backup from Profile.
+Then open `http://localhost:8765`. Opening `index.html` directly as a file is
+unsupported. The game uses a single-threaded Godot Web export and does not
+require a gameplay server, passwords, subscriptions or API keys.
 
 ## Controls
 
-Click a mirror to turn it. Tab to the board, arrow keys select, Enter/Space
-rotates. T changes tide, Z undoes, R resets, H hints, Escape pauses.
+Click or tap a circular mirror to turn it. With a keyboard, Tab to the board,
+use arrow keys to select a mirror, then Enter or Space to rotate it.
+T changes tide, Z undoes, R resets, H provides a hint, and Escape pauses.
 
-## Distribution and notices
+## Your progress
 
-This jam campaign is free to play. A proposed expanded $5.99 edition is not on sale.
-All original assets are credited to Shivam Gupta. Godot and font licenses are in
-`licenses/`. No claim of a commercial launch, cloud saves, or platform certification.
+Profiles and progress stay in this browser or device. Clearing browser storage
+removes them. Use Profile > Export save to keep a portable backup, and Import
+save to restore one. Local profiles do not provide online authentication or
+cloud synchronization.
+
+## Downloads and credits
+
+[Download version 1.1.0](https://github.com/shi1720/tidelume-play/releases/tag/v1.1.0).
+The macOS application is unsigned and not notarized. The web version is the
+recommended option for immediate play.
+
+Creative direction and release decisions: Shivam Gupta. Development, original
+art and sound production were assisted by AI tools. Built with Godot Engine.
+Original source and assets use MIT; font and third-party notices are included
+in `licenses/`. This public repository distributes the playable release. The
+creator maintains the source project separately.
